@@ -17,7 +17,7 @@ The code in this repository predicts multidimensional time-series data using a r
 Please kindly consider citing our published article if you use this code in your research. Also, please do not hesitate to look at the other two repositories mentioned above.
 
 Please also have a look at the following repository, which extends the current repository by including training of RNNs with Unbiased Online Recurrent Optimization (UORO) and hyper-parameter optimization, as well as the associated research and blog articles:
- - repository: https://github.com/pohl-michel/time-series-forecasting-with-UORO-RTRL-LMS-and-linear-regression 
+ - repository: https://github.com/pohl-michel/time-series-forecasting-uoro-rtrl
  - research article (journal version with restricted access): https://doi.org/10.1016/j.cmpb.2022.106908
  - research article (accepted manuscript version, openly available): https://doi.org/10.48550/arXiv.2106.01100
  - blog article (Medium): https://medium.com/towards-data-science/forecasting-respiratory-motion-using-online-learning-of-rnns-for-safe-radiotherapy-bdf4947ad22f
