@@ -1,33 +1,25 @@
-Note (10th October 2024): An extension of this repository is available here: https://github.com/pohl-michel/2D-MR-image-prediction.
+## Forecasting 3D positions of internal points in the chest using an RNN trained with RTRL
+
+**Note**: An extension of this repository is available here: https://github.com/pohl-michel/2D-MR-image-prediction.
 Its ["Time_series_forecasting" folder](https://github.com/pohl-michel/2D-MR-image-prediction/blob/main/Time_series_forecasting/README.md) extends the current repository with the addition of other evaluation metrics for general time series (not necessarily representing the motion of 3D objects), automatic grid-search-based hyperparameter tuning, as well as of other online algorithms for RNNs (unbiased online recurrent optimization, decoupled neural interfaces, sparse one-step approximation, and a simpler implementation of real-time recurrent learning), an SVR baseline, and both sequence-specific and population-based encoder-only transformers.
 
-----------------------------------------------
-This repository is the second of a series of three repositories containing code that we used in the research corresponding to the following article: 
+## Overview
 
-Michel Pohl, Mitsuru Uesaka, Kazuyuki Demachi, Ritu Bhusal Chhatkuli, "Prediction of the motion of chest internal points using a recurrent neural network trained with real-time recurrent learning for latency compensation in lung cancer radiotherapy", Computerized Medical Imaging and Graphics, Volume 91, 2021, 101941, ISSN 0895-6111
+This repository contains MATLAB code for forecasting the 3D positions of internal points in chest CT/CBCT image sequences using a vanilla RNN trained using real-time recurrent learning (RTRL). Gradient clipping is applied to ensure numerical stability.
 
-You can access it with the following links:
- - https://doi.org/10.1016/j.compmedimag.2021.101941 (journal version with restricted access)
- - https://doi.org/10.48550/arXiv.2207.05951 (accepted manuscript version, openly available)
+The code in this repository predicts multidimensional time-series data using a recurrent neural network (RNN) trained by real-time recurrent learning (RTRL) with gradient clipping.
 
-The code in this repository predicts multidimensional time-series data using a recurrent neural network (RNN) trained by real-time recurrent learning (RTRL) with gradient clipping. The two other repositories corresponding to the article mentioned above are the following:
- - Lucas-Kanade pyramidal optical flow for 3D image sequences: https://github.com/pohl-michel/Lucas-Kanade-pyramidal-optical-flow-for-3D-image-sequences
- - 3D image warping using Nadaraya-Watson non-linear regression: https://github.com/pohl-michel/3D-image-warping-using-Nadaraya-Watson-non-linear-regression
+The figure below gives an example of prediction 400ms in advance with RTRL (the sampling rate is 2.5Hz):
 
-Please kindly consider citing our published article if you use this code in your research. Also, please do not hesitate to look at the other two repositories mentioned above.
-
-Please also have a look at the following repository, which extends the current repository by including training of RNNs with Unbiased Online Recurrent Optimization (UORO) and hyper-parameter optimization, as well as the associated research and blog articles:
- - repository: https://github.com/pohl-michel/time-series-forecasting-uoro-rtrl
- - research article (journal version with restricted access): https://doi.org/10.1016/j.cmpb.2022.106908
- - research article (accepted manuscript version, openly available): https://doi.org/10.48550/arXiv.2106.01100
- - blog article (Medium): https://medium.com/towards-data-science/forecasting-respiratory-motion-using-online-learning-of-rnns-for-safe-radiotherapy-bdf4947ad22f
- - blog article (personal blog): https://pohl-michel.github.io/blog/articles/predicting-respiratory-motion-online-learning-rnn/article.html
-
-The figure below gives an example of prediction 400ms in advance with RTRL (the sampling rate is 2.5Hz). 
 ![alt text](prediction_RTRL.png "prediction with RTRL a horizon of 400ms")
 
 Our implementation is based on the chapter 15 ("Dynamically Driven Recurrent Networks") of the following book :
 Haykin, Simon S. "Neural networks and learning machines/Simon Haykin." (2009).
+
+Note : prediction is made without any specific assumption on the nature of the temporal data,
+but the evaluation of the RNN uses the assumption that the data represents the 3D position of several objects.
+
+## How to run
 
 The main script to execute is "prediction_main.m".
 The data to be predicted is in the directory named "1. Input time series sequences", 
@@ -40,10 +32,21 @@ The behavior of the program is controlled by the structure `beh_par` defined in 
 In particular, one can choose to perform computations on the GPU by setting `beh_par.GPU_COMPUTING = true`.
 The fields of that structure can be set manually.
 
+## Expected output
+
 The figures showing prediction on the test data and the loss function are saved in the following folders: 
 "1. Prediction results (figures)" and "2. Prediction results (images)". 
 The RNN results are saved in the folder "3. RNN variables (temp)".
 The parameters used and the numerical RNN evaluation results are also recorded in a txt file located in the folder "4. Log txt files".
 
-Note : prediction is made without any specific assumption on the nature of the temporal data,
-but the evaluation of the RNN uses the assumption that the data represents the 3D position of several objects.
+## References
+
+This repository is the second of a series of three repositories containing code that we used in the research corresponding to the following article: 
+
+Michel Pohl, Mitsuru Uesaka, Kazuyuki Demachi, Ritu Bhusal Chhatkuli, ["Prediction of the motion of chest internal points using a recurrent neural network trained with real-time recurrent learning for latency compensation in lung cancer radiotherapy"](https://doi.org/10.1016/j.compmedimag.2021.10194), Computerized Medical Imaging and Graphics, Volume 91, 2021, 101941, ISSN 0895-6111 [arXiv](https://doi.org/10.48550/arXiv.2207.05951)
+
+Please kindly consider citing our published article if you use this code in your research.
+
+The two other repositories corresponding to the article mentioned above are the following:
+ - Lucas-Kanade pyramidal optical flow for 3D image sequences: https://github.com/pohl-michel/Lucas-Kanade-pyramidal-optical-flow-for-3D-image-sequences
+ - 3D image warping using Nadaraya-Watson non-linear regression: https://github.com/pohl-michel/3D-image-warping-using-Nadaraya-Watson-non-linear-regression
