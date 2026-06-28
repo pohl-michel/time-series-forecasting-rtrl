@@ -12,7 +12,7 @@ You can access it with the following links:
 
 The code in this repository predicts multidimensional time-series data using a recurrent neural network (RNN) trained by real-time recurrent learning (RTRL) with gradient clipping. The two other repositories corresponding to the article mentioned above are the following:
  - Lucas-Kanade pyramidal optical flow for 3D image sequences: https://github.com/pohl-michel/Lucas-Kanade-pyramidal-optical-flow-for-3D-image-sequences
- - 3D image warping using Nadaraya-Watson non-linear regression: https://github.com/pohl-michel/Time-series-prediction-with-an-RNN-trained-with-RTRL
+ - 3D image warping using Nadaraya-Watson non-linear regression: https://github.com/pohl-michel/3D-image-warping-using-Nadaraya-Watson-non-linear-regression
 
 Please kindly consider citing our published article if you use this code in your research. Also, please do not hesitate to look at the other two repositories mentioned above.
 
