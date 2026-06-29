@@ -47,5 +47,5 @@ Michel Pohl, Mitsuru Uesaka, Kazuyuki Demachi, Ritu Bhusal Chhatkuli, ["Predicti
 Please kindly consider citing our published article if you use this code in your research.
 
 The two other repositories corresponding to the article mentioned above are the following:
- - Lucas-Kanade pyramidal optical flow for 3D image sequences: https://github.com/pohl-michel/3D-Lucas-Kanade-optical-flow
- - 3D image warping using Nadaraya-Watson non-linear regression: https://github.com/pohl-michel/Nadaraya-Watson-3D-image-warping
+ - Lucas–Kanade pyramidal optical flow for 3D image sequences: https://github.com/pohl-michel/3D-Lucas-Kanade-optical-flow
+ - 3D image warping using Nadaraya–Watson non-linear regression: https://github.com/pohl-michel/Nadaraya-Watson-3D-image-warping
