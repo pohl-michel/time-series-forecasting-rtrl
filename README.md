@@ -40,12 +40,12 @@ The parameters used and the numerical RNN evaluation results are also recorded i
 
 ## References
 
-This repository is the second of a series of three repositories containing code that we used in the research corresponding to the following article: 
+This repository supports the findings in the following article:
 
-Michel Pohl, Mitsuru Uesaka, Kazuyuki Demachi, Ritu Bhusal Chhatkuli, ["Prediction of the motion of chest internal points using a recurrent neural network trained with real-time recurrent learning for latency compensation in lung cancer radiotherapy"](https://doi.org/10.1016/j.compmedimag.2021.10194), Computerized Medical Imaging and Graphics, Volume 91, 2021, 101941, ISSN 0895-6111 [arXiv](https://doi.org/10.48550/arXiv.2207.05951)
+Michel Pohl, Mitsuru Uesaka, Kazuyuki Demachi, Ritu Bhusal Chhatkuli, "Prediction of the motion of chest internal points using a recurrent neural network trained with real-time recurrent learning for latency compensation in lung cancer radiotherapy", Computerized Medical Imaging and Graphics, Volume 91, 2021, 101941, ISSN 0895-6111 [[Published version](https://doi.org/10.1016/j.compmedimag.2021.101941)] [[arXiv](https://doi.org/10.48550/arXiv.2207.05951)]
 
-Please kindly consider citing our published article if you use this code in your research.
+Two other repositories contain code components supporting the article above:
+ - Volumetric image registration using the pyramidal, iterative Lucas–Kanade optical-flow algorithm: https://github.com/pohl-michel/3D-Lucas-Kanade-optical-flow
+ - 3D image warping with Nadaraya–Watson kernel regression: https://github.com/pohl-michel/Nadaraya-Watson-3D-image-warping
 
-The two other repositories corresponding to the article mentioned above are the following:
- - Lucas–Kanade pyramidal optical flow for 3D image sequences: https://github.com/pohl-michel/3D-Lucas-Kanade-optical-flow
- - 3D image warping using Nadaraya–Watson non-linear regression: https://github.com/pohl-michel/Nadaraya-Watson-3D-image-warping
+Please kindly consider citing our article if you use this code in your research.
