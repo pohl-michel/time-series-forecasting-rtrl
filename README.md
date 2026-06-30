@@ -1,4 +1,4 @@
-## Forecasting 3D positions of internal points in the chest using an RNN trained with RTRL
+# Forecasting 3D positions of internal points in the chest using an RNN trained with RTRL
 
 **Note**: This repository contains the original code supporting my paper on RTRL published in 2021 (see ["References"](#references) section). A newer consolidated implementation is available in the [`Time_series_forecasting folder`](https://github.com/pohl-michel/2D-MR-image-prediction/blob/main/Time_series_forecasting/README.md) of the `2D-MR-image-prediction` repository, which includes code for a simpler version of RTRL, additional online learning algorithms for RNNs, and transformer models, as well as extended capabilities such as hyperparameter tuning and more general evaluation settings.
 
